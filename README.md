@@ -1,4 +1,4 @@
-# media-diet-browser-ext
+# Browser Extension for Online News Exposure Research
 
 Browser extension for the **[name redacted for peer review]**, a study on the connections between media consumption habits and political bias.
 
