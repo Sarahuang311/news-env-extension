@@ -1,0 +1,84 @@
+/*
+    Intervention Display CSS Rules
+    - Light Intervention is a red bar at the bottom of each qualifying news media web page 
+      showing how many times they have visited the page / how many views they have left.
+    - Heavy Intervention is a full page blur and centered red box news media web page.
+    Some useful references:
+        https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+        https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+#StudyExtLightIntervention {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 10vh;
+    overflow-y: hidden;
+    background-color: rgba(140, 174, 232, 0.85);
+    position: fixed;
+    z-index: 10000000;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+#StudyExtLightIntervention > .StudyExtInterventionText {
+    padding: 3vh 2vw;
+    font-family: 'Roboto Slab', sans-serif;
+    text-align: center;
+    font-size: 1.8rem;
+    color: white;
+}
+
+#StudyExtLightInterventionSpacer {
+    width: 100%;
+    height: 10vh;
+}
+
+#StudyExtHeavyIntervention {
+    cursor: not-allowed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(140, 174, 232, 0.85);
+    position: fixed;
+    z-index: 1000000;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    pointer-events: none;
+    top: 0;
+    left: 0;
+}
+
+#StudyExtHeavyIntervention > .StudyExtInterventionText {
+    padding: 3vh 3vw;
+    font-family: 'Roboto Slab', sans-serif;
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+}
+
+
+/*
+    Utility Classes
+*/
+b {
+    font-weight: bold;
+}
+
+.svg-dismiss {
+    margin-right: 3vw;
+    width: 3.2rem;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.svg-dismiss:hover {
+    transform: scale(1.2);
+}

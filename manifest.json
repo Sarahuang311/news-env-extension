@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "Study Extension",
+  "short_name": "StudyExt",
+  "description": "Extension for use with a research study on the connections between media consumption habits and political bias.",
+  "version": "1.9",
+  "homepage_url": "https://your-server-domain.example",
+
+  "action": {
+    "default_icon": {
+      "16": "img/16x16.png",
+      "24": "img/24x24.png",
+      "32": "img/32x32.png",
+      "48": "img/48x48.png",
+      "96": "img/96x96.png",
+      "128": "img/128x128.png"
+    },
+    "default_title": "Study Extension",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "img/16x16.png",
+    "24": "img/24x24.png",
+    "32": "img/32x32.png",
+    "48": "img/48x48.png",
+    "96": "img/96x96.png",
+    "128": "img/128x128.png"
+  },
+
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://your-server-domain.example/onboard/extension/",
+        "https://your-server-domain.example/onboard/extension_prolific/"
+      ],
+      "run_at": "document_idle",
+      "js": ["registration.js"]
+    },
+    {
+      "matches": [
+        "https://your-server-domain.example/",
+        "https://your-server-domain.example/?*"
+      ],
+      "run_at": "document_idle",
+      "js": ["reconnect.js"]
+    }
+  ],
+  
+  "permissions": [
+    "storage", 
+    "tabs",
+    "history",
+    "scripting",
+    "alarms"
+  ],
+
+  "host_permissions": ["<all_urls>"]
+}

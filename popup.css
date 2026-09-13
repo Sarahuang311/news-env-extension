@@ -1,0 +1,192 @@
+/*
+  popup.css - Styling for extension popup on click.
+*/
+
+/*
+  Project Fonts: Lato and Roboto Slab are used.
+*/
+@font-face {
+  font-family: "Lato";
+  src: url("font/Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: "RobotoSlab";
+  src: url("font/RobotoSlab-Regular.ttf");
+}
+
+/*
+  Color Variable Declarations - Change here to change colors across extension.
+*/
+:root {
+  --link-hover-color: #0087c1ba;
+  --dark-text: #161616;
+  --grey-text: #676767;
+  --border-color: #16161684;
+  --bg-color: #fcfcfb;
+  --red-alert: #ff0000;
+  --red-alert-light: #fa7272;
+}
+
+/*
+  Remove default decorations from the URL.
+*/
+a {
+  text-decoration: none;
+}
+
+/*
+  Setup body outline.
+  Overall layout:
+    body (flex col)
+      header (flex row)
+      main (flex col)
+        main__status (flex row)
+        main__domain (flex col)
+        main__intervention (empty rn)
+        main__settings (flex row)
+        main__contact (flex row)
+      footer (flex row)
+*/
+.body {
+  margin: 0;
+  padding: 0.25rem 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  border: 0.1rem solid var(--border-color);
+  background-color: var(--bg-color);
+}
+
+/*
+  Header just adds icon + logo to the top of the extension popup.
+  Links to the study website on click, size changes on hover & focus.
+*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.logo__image {
+  width: 3rem;
+  padding-right: 1rem;
+  transition: transform 0.2s;
+}
+
+.header:hover > .logo__image {
+  transform: scale(1.05);
+}
+
+.logo__text {
+  font: bold 1.8rem "RobotoSlab";
+  color: var(--dark-text);
+  transition: color 0.2s;
+}
+
+.header:hover > .logo__text {
+  color: var(--grey-text);
+}
+
+/*
+  Main contains other focusable subsections, each with an icon.
+  On hover, icons spin and link text lightens, blue for site links, red for alerts.
+  Main sections are status, settings, and contact.
+*/
+.main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.main__status {
+  display: flex;
+  align-items: center;
+  border-top: 0.15rem solid var(--border-color);
+  padding: 0.25rem 0;
+}
+
+.main__status--message {
+  margin: auto;
+  font: bold 1rem "Lato";
+  color: var(--dark-text);
+}
+
+.main__status a {
+  color: var(--red-alert);
+  transition: color 0.2s;
+}
+
+.main__status:hover a {
+  color: var(--red-alert-light);
+}
+
+.main__settings {
+  display: flex;
+  align-items: center;
+  border-top: 0.15rem solid var(--border-color);
+  padding: 0.5rem 0;
+}
+
+.main__contact {
+  display: flex;
+  align-items: center;
+  border-top: 0.15rem solid var(--border-color);
+  border-bottom: 0.15rem solid var(--border-color);
+  padding: 0.5rem 0;
+}
+
+/*
+  Section icons for all of the sections in main set this way,
+  including the animations.
+*/
+.main__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: transform 0.5s;
+}
+
+:hover > .main__icon {
+  transform: scale(1.2);
+}
+
+.main__settings--text {
+  margin: auto;
+  font: bold 0.9rem "Lato";
+  color: var(--dark-text);
+  transition: color 0.2s;
+}
+
+.main__contact--text {
+  margin: auto;
+  font: bold 0.9rem "Lato";
+  color: var(--dark-text);
+  transition: color 0.2s;
+}
+
+.main__settings:hover > .main__settings--text {
+  color: var(--link-hover-color);
+}
+
+.main__contact:hover > .main__contact--text {
+  color: var(--link-hover-color);
+}
+
+/*
+  Footer holds copyright information and version information.
+*/
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.footer__copyright {
+  font: bold 0.75rem "RobotoSlab";
+}
+
+.footer__version {
+  font: italic 0.75rem "Lato";
+}

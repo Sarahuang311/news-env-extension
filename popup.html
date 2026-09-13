@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- 
+  popup.html - HTML and styling content for StudyExt Extension popup interface.
+-->
+<html>
+   <head>
+    <title>StudyExt</title>
+    <!-- Popup.css stores all styling information. -->
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body class="body">
+    <!-- Header logo info. -->
+    <!-- NOTE: all a tags target "_blank" so links open in new tabs. -->
+    <a id="header-link" href="#" target="_blank">
+      <header class="header">
+        <img class="logo__image" src="img/logo.svg">
+        <span class="logo__text">StudyExt</span>
+      </header>
+    </a>
+    <!-- Main sections, just notifications for user based on extension activity. -->
+    <main class="main">
+      <a href="" target="_blank">
+        <div class="main__status">
+          <img class="main__icon" src="img/checkmark.svg">
+          <span class="main__status--message"></span>
+        </div>
+      </a>
+      <div class="main__intervention">
+        <!-- 
+          Binding for Visual Intervention Data in Popup. Currently empty, but 
+          can be populated by the extension for info the user needs for 
+          interventions in the future.
+        -->
+      </div>
+      <a id="settings-link" href="#" target="_blank">
+        <div class="main__settings">
+          <img class="main__icon" src="img/settings.svg">
+          <span class="main__settings--text">My Data</span>
+        </div>
+      </a>
+      <a id="contact-link" href="#" target="_blank">
+        <div class="main__contact">
+          <img class="main__icon" src="img/contact.svg">
+          <span class="main__contact--text">Contact Us</span>
+        </div>
+      </a>
+    </main>
+    <!-- Generic footer with version info, non-programmatically updated. -->
+    <footer class="footer">
+      <span class="footer__copyright">&#169; StudyExt 2021</span>
+      <span class="footer__version">v1.9</span>
+    </footer>
+    <!-- Popup.js populates any links / actions needed by user when extension is clicked. -->
+    <script src="config.js" defer></script>
+    <script src="popup.js" defer></script>
+  </body>
+</html>
