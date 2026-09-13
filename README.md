@@ -30,7 +30,3 @@ The backend server URL is configured in `config.js` (`SERVER_URL`); set it to yo
 ## Contributors
 
 [Anonymized for peer review]
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
